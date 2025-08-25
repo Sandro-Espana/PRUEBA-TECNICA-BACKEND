@@ -10,16 +10,14 @@ app = FastAPI(title="API de Control de Marcas")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:3000",  # Frontend en desarrollo
-        "https://localhost:3000",  # Frontend en desarrollo con HTTPS
-        "http://127.0.0.1:3000",  # Frontend en desarrollo (alternativo)
-        "https://127.0.0.1:3000",  # Frontend en desarrollo con HTTPS (alternativo)
-        # Agrega aquí tu dominio de producción cuando lo tengas
-        # "https://tu-dominio-produccion.com"
+        "http://localhost:3000",
+        "http://localhost:3001", 
+        "https://prueba-tecnica-frontend-gamma.vercel.app",
+        "https://prueba-tecnica-frontend-git-master-sandro-espanas-projects.vercel.app"
     ],
     allow_credentials=True,
-    allow_methods=["*"],  # Permite todos los métodos HTTP
-    allow_headers=["*"],  # Permite todos los headers
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 Base.metadata.create_all(bind=engine)
